@@ -1,7 +1,16 @@
 <h1><%= @user.handle %></h1>
-
 <br>
 
 <% @posts.each do |post| %>
    <h4><%= post.content %></h4>
+<% end %>
+<br>
+
+<h1>favorites</h1>
+<br>
+
+<% @favorites.each do |favorite| %>
+   <% if favorite.post.user_id != @user.id %>
+      <h4><%= favorite.post.content %></h4>
+   <% end %>
 <% end %>
