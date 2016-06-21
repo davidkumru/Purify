@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'user_posts/:user_id' => 'posts#user', as: :user_posts
-  # get 'posts/index'
   resources :posts do
     resources :favorites
   end
