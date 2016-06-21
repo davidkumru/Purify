@@ -4,16 +4,22 @@ class PostsController < ApplicationController
   end
 
   def create
-     post_params = params.require( :post ).permit( :title, :content )
+    post_params = params.require( :post ).permit( :title, :content )
 
-     @post = Post.new(title: post_params[:title], content: post_params[:content] )
-     @post.user = current_user
-     
-     if @post.save
-        redirect_to posts_path
-     else
-        render posts_path
-     end
+    @post = Post.new(title: post_params[:title], content: post_params[:content] )
+    @post.user = current_user
+
+    if @post.save
+    redirect_to posts_path
+    else
+    render posts_path
+    end
+  end
+
+  def user
+    @user = User.find( params[:user_id] )
+
+    @posts = Post.where( user: @user ).order( created_at: :desc )
   end
 
 end

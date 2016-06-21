@@ -10,5 +10,6 @@
    <strong>Content:</strong>
    <p><%= post.content %></p>
    <p><%= post.user %></p>
+   <p><%= link_to post.user.handle, user_posts_path( post.user ) %></p>
    <hr>
 <% end %>
