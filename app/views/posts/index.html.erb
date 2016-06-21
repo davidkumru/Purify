@@ -9,6 +9,11 @@
    <br>
    <strong>Content:</strong>
    <p><%= post.content %></p>
+   <% favorited = Favorite.find_by( post: post, user: current_user ) != nil %>
+    <% btn_color = favorited ? "warning" : "default" %>
+
+    <%= link_to "ツ", post_favorites_path( post ), method: :post, class: "btn btn-#{btn_color} btn-xs", disabled: !user_signed_in? %>
+    <%= post.favorites.count %>
    <p><%= link_to post.user.handle, user_posts_path( post.user ) %></p>
    <hr>
 <% end %>
