@@ -1,7 +1,8 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
-<%= render "form" %>
-<br>
+<h1>Posts</h1>
+<% if user_signed_in? %>
+   <%= render "form" %>
+   <br>
+<% end %>
 
 <% @posts.each do |post| %>
    <h3><%=link_to post.title, post %></h3>
