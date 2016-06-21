@@ -9,5 +9,5 @@
 Post.delete_all
 
 Post.create( title: "My first post.", content: "Pizza is yummy!")
-Post.create( title: "My second post.", content: "Pizza is yummy!")
-Post.create( title: "My third post.", content: "Pizza is yummy!")
+Post.create( title: "My second post.", content: "Pasta is yummy!")
+Post.create( title: "My third post.", content: "Rice is yummy!")
