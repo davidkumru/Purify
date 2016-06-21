@@ -1,0 +1,13 @@
+<h1>Posts#index</h1>
+<p>Find me in app/views/posts/index.html.erb</p>
+<%= render "form" %>
+<br>
+<!-- <%= render @posts %> -->
+
+<% @posts.each do |post| %>
+   <h3><%=link_to post.title, post %></h3>
+   <br>
+   <strong>Content:</strong>
+   <p><%= post.content %></p>
+   <hr>
+<% end %>
