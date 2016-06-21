@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'posts/index'
+  devise_for :users
+  get 'user_posts/:user_id' => 'posts#user', as: :user_posts
+  # get 'posts/index'
   resources :posts
 
   # The priority is based upon order of creation: first created -> highest priority.
