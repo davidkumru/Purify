@@ -8,7 +8,7 @@
 
 User.delete_all
 
-frank = User.create( email: 'frank@mail.com', password: 'abcd' )
+frank = User.create( email: 'frank@mail.com', password: 'abcd1234' )
 alice = User.create( email: 'alice@mail.com', password: 'abcd' )
 anton = User.create( email: 'anton@mail.com', password: 'abcd' )
 
