@@ -1,16 +1,19 @@
-<h1><%= @user.handle %></h1>
-<br>
+<h2>Posts by <%= @user.handle %></h2>
 
 <% @posts.each do |post| %>
-   <h4><%= post.content %></h4>
+  <h3><%=link_to post.title, post %></h3>
+  <p><%= truncate(post.content, length: 400, separator: ' ') %></p>
+
+  <p>by <%= link_to post.user.handle, user_posts_path( post.user ) %> on <%= post.created_at.strftime("%B %d, %H:%M") %> - comments - <%= post.favorites.count %> favorites
+    <% if user_signed_in? %>
+      <% favorited = Favorite.find_by( post: post, user: current_user ) != nil %>
+      <% btn_color = favorited ? "warning" : "default" %>
+      <%= link_to "+", post_favorites_path( post ), method: :post, disabled: !user_signed_in? %>
+    <% end %></p>
 <% end %>
-<br>
 
-<h1>favorites</h1>
-<br>
-
-<% @favorites.each do |favorite| %>
+<!-- <% @favorites.each do |favorite| %>
    <% if favorite.post.user_id != @user.id %>
       <h4><%= favorite.post.content %></h4>
    <% end %>
-<% end %>
+<% end %> -->
