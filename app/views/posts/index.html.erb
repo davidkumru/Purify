@@ -4,7 +4,6 @@
 
 <% @posts.each do |post| %>
   <% unless @dates.include?(post.created_at.strftime("%B %d")) %>
-  <br>
     <h2><%= post.created_at.strftime("%B %d") %></h2>
     <% @dates << post.created_at.strftime("%B %d") %>
   <% end %>
