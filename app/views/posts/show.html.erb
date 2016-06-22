@@ -1,0 +1,11 @@
+<h2><%=@post.title %></h2>
+<p><%= @post.content %></p>
+
+<p>by <%= link_to @post.user.handle, user_posts_path( @post.user ) %> on <%= @post.created_at.strftime("%b %d, %H:%M") %> - comments - <%= @post.favorites.count %> favorites
+  <% if user_signed_in? %>
+    <% favorited = Favorite.find_by( post: @post, user: current_user ) != nil %>
+    <% btn_color = favorited ? "warning" : "default" %>
+    <%= link_to "+", post_favorites_path( @post ), method: :post, class: "btn btn-#{btn_color} btn-xs", disabled: !user_signed_in? %>
+  <% end %></p>
+<br>
+<p>Comments</p>
