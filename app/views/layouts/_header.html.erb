@@ -5,10 +5,11 @@
   <div class="signin">
         <% if !user_signed_in? %>
            <%= link_to "Log In", new_user_session_path %>
-           <em>|</em>
+           <em>&nbsp;|&nbsp;</em>
            <%= link_to "Sign Up", new_user_registration_path %>
         <% else %>
            <%= current_user.handle %>
+           <em>|</em>
            <%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
        <% end %>
    </div>
