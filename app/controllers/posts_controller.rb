@@ -15,9 +15,9 @@ class PostsController < ApplicationController
     @post.user = current_user
 
     if @post.save
-    redirect_to posts_path
+      redirect_to posts_path
     else
-    render posts_path
+      render posts_path
     end
   end
 
