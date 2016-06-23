@@ -1,6 +1,9 @@
 <div class="article">
    <h1><%=@post.title %></h1>
    <p><%= @post.content %></p>
+   <h6><% @post.tags.each do |tag| %>
+   <%= link_to tag, tag_path(tag) %>
+   <% end %></h6>
 
    <h6>by <%= link_to @post.user.handle, user_posts_path( @post.user ) %> on <%= @post.created_at.strftime("%B %d, %H:%M") %> - <%= @post.comments.count %> comments - <%= @post.favorites.count %> favorites
      <% if user_signed_in? %>
