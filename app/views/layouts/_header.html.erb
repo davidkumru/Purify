@@ -1,12 +1,15 @@
 <div class="navbar">
-   <ul>
-     <li><%= link_to "PURIFY", root_path %></li>
-     <% if !user_signed_in? %>
-        <%= link_to "Log in", new_user_session_path %>
-        <%= link_to "Sign up", new_user_registration_path %>
-     <% else %>
-        <%= current_user.handle %>
-        <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
-    <% end %>
-    </ul>
+   <div class="home">
+        <%= link_to "PURIFY", posts_path %>
+  </div>
+  <div class="signin">
+        <% if !user_signed_in? %>
+           <%= link_to "Log In", new_user_session_path %>
+           <em>|</em>
+           <%= link_to "Sign up", new_user_registration_path %>
+        <% else %>
+           <%= current_user.handle %>
+           <%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
+       <% end %>
+   </div>
 </div>
