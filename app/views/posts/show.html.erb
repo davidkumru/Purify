@@ -22,7 +22,7 @@
      <p><%= comment.comment %></p>
      <h6>by <%= link_to comment.user.handle , user_posts_path( comment.user ) %> on <%= comment.created_at.strftime("%B %d, %H:%M") %>
    <% end %></h6>
-</div>
+</div></div>
 <div class="aside">
    <ul>
       <li>Tag</li>
@@ -41,5 +41,5 @@
       <li><%= submit_tag "Search", class: "form_button_search" %></li>
       <% end %>
    </ul>
- </div>
+</div>
 </div>
