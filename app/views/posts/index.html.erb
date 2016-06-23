@@ -1,7 +1,3 @@
-<% if user_signed_in? %>
-  <%= render 'posts/form' %>
-<% end %>
-
    <div class="article">
    <% @posts.each do |post| %>
      <% unless @dates.include?(post.created_at.strftime("%B %d")) %>
