@@ -1,11 +1,10 @@
 <% if user_signed_in? %>
    <%= render "form" %>
 <% end %>
-<div class="container">
    <div class="article">
    <% @posts.each do |post| %>
      <% unless @dates.include?(post.created_at.strftime("%B %d")) %>
-       <h2><%= post.created_at.strftime("%B %d") %></h2>
+       <%= post.created_at.strftime("%B %d") %>
        <% @dates << post.created_at.strftime("%B %d") %>
      <% end %>
 
@@ -20,6 +19,21 @@
        <% end %></p>
    <% end %>
    </div>
-      <div class="aside">Tag
+   <div class="aside">
+      <ul>
+         <li>Tag</li>
+         <li></li>
+         <li></li>
+      </ul>
+      <ul>
+         <li>Filter by</li>
+         <li></li>
+         <li></li>
+      </ul>
+      <ul>
+         <li>Search</li>
+         <li></li>
+         <li></li>
+      </ul>
    </div>
 </div>
