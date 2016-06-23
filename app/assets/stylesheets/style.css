@@ -1,122 +1,161 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Montserrat+Alternates:400,700);
+	@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Montserrat+Alternates:400,700);
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed,
+	figure, figcaption, footer, header, hgroup,
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
 
-body {
-	height: 100%;
-   font-family: 'Montserrat';
-}
+	body {
+		height: 100%;
+	   font-family: 'Montserrat';
+	}
 
-.container {
-	margin-top: 50px;
-	display: flex;
-}
+	.container {
+		margin-top: 50px;
+		display: flex;
+	}
 
-.navbar {
-	position: fixed;
-	top:0;
-	left: 0;
-	width:100%;
-	background-color: #a2f2ab;
-	height: 45px;
-}
+	.navbar {
+		position: fixed;
+		top:0;
+		left: 0;
+		width:100%;
+		background-color: #a2f2ab;
+		height: 45px;
+	}
 
-.navbar a {
-	text-decoration:none;
-}
+	.navbar a {
+		text-decoration:none;
+	}
 
-.home {
-   float:left;
-	margin-top:4px;
-	margin-left:10%;
-	font-size:30px;
-	font-weight: bold;
-	letter-spacing: 4px;
+	.home {
+	   float:left;
+		margin-top:4px;
+		margin-left:10%;
+		font-size:30px;
+		font-weight: bold;
+		letter-spacing: 4px;
 
-}
+	}
 
-.signin {
-	font-size:12px;
-	float:right;
-	margin-top:15px;
-	margin-right:10%;
-}
+	.signin {
+		font-size:12px;
+		float:right;
+		margin-top:15px;
+		margin-right:10%;
+	}
 
-.article {
-	align-items: stretch;
-	width: 64%;
-	padding-top: 50px;
-	margin-left:10%;
-}
+	.article {
+		align-items: stretch;
+		width: 64%;
+		padding-top: 50px;
+		margin-left:10%;
+	}
 
-.article h1, h3, p {
-	width: 80%;
-}
+	.article h1, h3, p {
+		width: 80%;
+	}
 
-.aside {
-	align-items: stretch;
-	padding-top: 50px;
-	font-size: 12px;
-	width: 18%;
-	float:left;
-}
+	.aside {
+		align-items: stretch;
+		padding-top: 50px;
+		font-size: 12px;
+		width: 18%;
+		float:left;
+	}
 
-.aside ul {
-	margin-bottom: 150px;
-}
+	.aside .search ul li {
+		margin-bottom: 10px;
 
-.field h1{
-	font-size:24px;
-	margin-bottom:30px;
-}
+	}
 
-.field {
-	margin-bottom:15px;
-}
+	.aside ul {
+		margin-bottom: 120px;
+	}
 
-a {
-   color:inherit;
-}
+	.form h1{
+		font-size:24px;
+		margin-bottom:30px;
+	}
 
-p {
-	font-size: 14px;
-	margin-top: 10px;
-}
+	.form {
+		line-height: 30px;
+		margin-bottom:20px;
+	}
 
-ul li {
-	list-style: none;
-}
+	.form_field {
+		outline: none;
+		font-size: 16px;
+		border-top-style: none;
+		border-left-style: none;
+		border-right-style: none;
+		border-bottom: 2px solid black;
+		width: 200px;
+		padding-bottom: 5px;
+		cursor: default;
+	}
 
-h1 {
-	margin-top:40px;
-	font-size: 18px;
-}
+	.form_button {
+		outline: none;
+		font-size: 12px;
+		border: 2px solid black;
+		width: 60px;
+		background-color: inherit;
+		font-weight: bold;
+	}
 
-h2{
-	margin-top: 10px;
-	font-size: 16px;
-}
+	.form_button_search {
+		outline: none;
+		font-size: 12px;
+		border: 2px solid black;
+		width: 60px;
+		background-color: inherit;
+	}
 
-h6 {
-	font-size: 10px;
-	margin-top: 10px;
-}
+	input:-webkit-autofill {
+   	-webkit-box-shadow: 0 0 0px 1000px white inset;
+	}
+
+	a {
+	   color:inherit;
+	}
+
+	p {
+		font-size: 14px;
+		margin-top: 10px;
+	}
+
+	ul li {
+		list-style: none;
+	}
+
+	h1 {
+		margin-top:40px;
+		font-size: 18px;
+	}
+
+	h2{
+		margin-top: 10px;
+		font-size: 16px;
+	}
+
+	h6 {
+		font-size: 10px;
+		margin-top: 10px;
+	}
