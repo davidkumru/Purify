@@ -1,4 +1,5 @@
 <div class="article">
+   <h3>&mdash;</h3>
    <h1><%=@post.title %></h1>
    <p><%= @post.content %></p>
    <h6><% @post.tags.each do |tag| %>
@@ -16,10 +17,12 @@
    <%= render "posts/commentform" %>
    <% end %>
 
+<div class="comments">
    <% @post.comments.each do |comment| %>
      <p><%= comment.comment %></p>
      <h6>by <%= link_to comment.user.handle , user_posts_path( comment.user ) %> on <%= comment.created_at.strftime("%B %d, %H:%M") %></h6>
    <% end %>
+</div>
 
 </div>
 <div class="aside">
@@ -33,9 +36,12 @@
       <li></li>
       <li></li>
    </ul>
+   <div class="search">
    <ul>
-      <li>Search</li>
-      <li></li>
-      <li></li>
+      <li><%= form_tag(posts_path, :method => "get", id: "search-form") do %></li>
+      <li><%= search_field_tag :search, params[:search], placeholder: "Search Articles", class: "form_field_search" %></li>
+      <li><%= submit_tag "Search", class: "form_button_search" %></li>
+      <% end %>
    </ul>
+ </div>
 </div>

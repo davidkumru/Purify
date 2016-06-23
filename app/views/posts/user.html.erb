@@ -5,12 +5,12 @@
      <h1><%=link_to post.title, post %></h1>
      <p><%= truncate(post.content, length: 400, separator: ' ') %></p>
 
-     <h6>by <%= link_to post.user.handle, user_posts_path( post.user ) %> on <%= post.created_at.strftime("%B %d, %H:%M") %> - <%= post.comments.count %> comments - <%= post.favorites.count %> favorites
+     <h6>by <%= link_to post.user.handle, user_posts_path( post.user ) %> on <%= post.created_at.strftime("%B %d, %H:%M") %> - <%= post.comments.count %> comments - <%= post.favorites.count %> favorites</h6>
        <% if user_signed_in? %>
          <% favorited = Favorite.find_by( post: post, user: current_user ) != nil %>
          <% btn_color = favorited ? "warning" : "default" %>
          <%= link_to "+", post_favorites_path( post ), method: :post, disabled: !user_signed_in? %>
-       <% end %></h6>
+       <% end %>
    <% end %>
 </div>
 <div class="aside">
@@ -24,9 +24,12 @@
       <li></li>
       <li></li>
    </ul>
+   <div class="search">
    <ul>
-      <li>Search</li>
-      <li></li>
-      <li></li>
+      <li><%= form_tag(posts_path, :method => "get", id: "search-form") do %></li>
+      <li><%= search_field_tag :search, params[:search], placeholder: "Search Articles", class: "form_field_search" %></li>
+      <li><%= submit_tag "Search", class: "form_button_search" %></li>
+      <% end %>
    </ul>
+   
 </div>
