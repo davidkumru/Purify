@@ -1,0 +1,7 @@
+<div class="article">
+   <h1>Tags</h1>
+
+<% @tags.most_used.each do |tag| %>
+  <p><%= link_to tag, tag_path(tag) %></p>
+<% end %>
+</div>
