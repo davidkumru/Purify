@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  get 'comments/new'
+
+  get 'comments/create'
+
   devise_for :users
   get 'user_posts/:user_id' => 'posts#user', as: :user_posts
   resources :posts do
     resources :favorites
+    resources :comments
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
