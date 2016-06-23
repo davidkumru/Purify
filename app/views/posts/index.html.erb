@@ -1,21 +1,25 @@
 <% if user_signed_in? %>
    <%= render "form" %>
 <% end %>
+<div class="container">
+   <div class="article">
+   <% @posts.each do |post| %>
+     <% unless @dates.include?(post.created_at.strftime("%B %d")) %>
+       <h2><%= post.created_at.strftime("%B %d") %></h2>
+       <% @dates << post.created_at.strftime("%B %d") %>
+     <% end %>
 
-<% @posts.each do |post| %>
-  <% unless @dates.include?(post.created_at.strftime("%B %d")) %>
-    <h2><%= post.created_at.strftime("%B %d") %></h2>
-    <% @dates << post.created_at.strftime("%B %d") %>
-  <% end %>
+     <h1><%=link_to post.title, post %></h1>
+     <p><%= truncate(post.content, length: 400, separator: ' ') %></p>
 
-  <h3><%=link_to post.title, post %></h3>
-  <p><%= truncate(post.content, length: 400, separator: ' ') %></p>
-
-  <p>by <%= link_to post.user.handle, user_posts_path( post.user ) %> at <%= post.created_at.strftime("%H:%M") %> - comments - <%= post.favorites.count %> favorites
-    <% if user_signed_in? %>
-      <% favorited = Favorite.find_by( post: post, user: current_user ) != nil %>
-      <% btn_color = favorited ? "warning" : "default" %>
-      <%= link_to "+", post_favorites_path( post ), method: :post, disabled: !user_signed_in? %>
-    <% end %></p>
-    <br>
-<% end %>
+     <h6>by <%= link_to post.user.handle, user_posts_path( post.user ) %> at <%= post.created_at.strftime("%H:%M") %> - comments - <%= post.favorites.count %> favorites</h6>
+       <% if user_signed_in? %>
+         <% favorited = Favorite.find_by( post: post, user: current_user ) != nil %>
+         <% btn_color = favorited ? "warning" : "default" %>
+         <%= link_to "+", post_favorites_path( post ), method: :post, disabled: !user_signed_in? %>
+       <% end %></p>
+   <% end %>
+   </div>
+      <div class="aside">Tag
+   </div>
+</div>

@@ -1,0 +1,96 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Montserrat+Alternates:400,700);
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+	height: 100%;
+   font-family: 'Montserrat';
+}
+
+.container {
+	display:flex;
+	margin-top: 50px;
+}
+
+.navbar {
+	position: fixed;
+	top:0;
+	left: 0;
+	width:100%;
+	background-color: #a2f2ab;
+	height: 45px;
+	padding-top: 15px;
+	padding-left: 15px;
+
+}
+
+.navbar ul li {
+	display: inline;
+	font-size:20px;
+}
+
+.article {
+	align-items: stretch;
+	width: 64%;
+	padding-top: 50px;
+	margin-left:10%;
+}
+
+.article h1, p {
+	width: 80%;
+}
+
+.aside {
+	align-items: stretch;
+	padding-top: 50px;
+	font-size: 12px;
+	width: 18%;
+	float:left;
+}
+
+a {
+   color:inherit;
+}
+
+p {
+	font-size: 14px;
+	margin-top: 10px;
+}
+
+ul li {
+	list-style: none;
+}
+
+h1 {
+	margin-top:40px;
+	font-size: 20px;
+}
+
+h2{
+	margin-top: 10px;
+	font-size: 16px;
+}
+
+h6 {
+	font-size: 10px;
+	margin-top: 10px;
+}
