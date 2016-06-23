@@ -2,14 +2,22 @@
    <h1><%=@post.title %></h1>
    <p><%= @post.content %></p>
 
-   <h6>by <%= link_to @post.user.handle, user_posts_path( @post.user ) %> on <%= @post.created_at.strftime("%B %d, %H:%M") %> - comments - <%= @post.favorites.count %> favorites</h6>
+   <h6>by <%= link_to @post.user.handle, user_posts_path( @post.user ) %> on <%= @post.created_at.strftime("%B %d, %H:%M") %> - <%= @post.comments.count %> comments - <%= @post.favorites.count %> favorites
      <% if user_signed_in? %>
        <% favorited = Favorite.find_by( post: @post, user: current_user ) != nil %>
        <% btn_color = favorited ? "warning" : "default" %>
        <%= link_to "+", post_favorites_path( @post ), method: :post, disabled: !user_signed_in? %>
-     <% end %></p>
-   <br>
-   <p>Comments</p>
+     <% end %></h6>
+
+   <% if user_signed_in? %>
+   <%= render "posts/commentform" %>
+   <% end %>
+
+   <% @post.comments.each do |comment| %>
+     <p><%= comment.comment %></p>
+     <h6>by <%= link_to comment.user.handle , user_posts_path( comment.user ) %> on <%= comment.created_at.strftime("%B %d, %H:%M") %></h6>
+   <% end %>
+
 </div>
 <div class="aside">
    <ul>
