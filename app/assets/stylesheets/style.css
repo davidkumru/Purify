@@ -68,16 +68,38 @@
 		margin-left:10%;
 	}
 
+	.comments {
+		padding-top: 40px;
+	}
+
+	.comments h6 {
+		margin-bottom: 25px;
+		border-bottom: 1px solid #a2f2ab;
+		padding-bottom: 25px;
+		width: 80%;
+	}
+
 	.article h1, h3, p {
 		width: 80%;
 	}
 
+	.article h1 {
+		font-weight: bold;
+	}
+
+	.article li {
+		list-style: none;
+		font-size:20px;
+	}
+
 	.aside {
 		align-items: stretch;
-		padding-top: 50px;
+		margin-top: 50px;
+		padding-left: 30px;
 		font-size: 12px;
 		width: 18%;
 		float:left;
+		border-left: 2px solid black
 	}
 
 	.aside .search ul li {
@@ -111,6 +133,19 @@
 		cursor: default;
 	}
 
+	.form_field_search {
+		outline: none;
+		font-size: 12px;
+		border-top-style: none;
+		border-left-style: none;
+		border-right-style: none;
+		border-bottom: 2px solid black;
+		width: 140px;
+		cursor: default;
+		padding-bottom: 5px;
+	}
+
+
 	.form_button {
 		outline: none;
 		font-size: 12px;
@@ -122,14 +157,19 @@
 
 	.form_button_search {
 		outline: none;
-		font-size: 12px;
+		font-size: 10px;
 		border: 2px solid black;
-		width: 60px;
+		width: 50px;
 		background-color: inherit;
+		font-weight: bold;
 	}
 
 	input:-webkit-autofill {
    	-webkit-box-shadow: 0 0 0px 1000px white inset;
+	}
+
+	::-webkit-input-placeholder {
+		color: #a2f2ab;
 	}
 
 	a {
@@ -138,7 +178,7 @@
 
 	p {
 		font-size: 14px;
-		margin-top: 10px;
+		margin-top: 15px;
 	}
 
 	ul li {
@@ -146,7 +186,7 @@
 	}
 
 	h1 {
-		margin-top:40px;
+		margin-top:55px;
 		font-size: 18px;
 	}
 
@@ -155,7 +195,16 @@
 		font-size: 16px;
 	}
 
+	h3 {
+		font-size:20px;
+		font-weight: bold;
+	}
+
 	h6 {
-		font-size: 10px;
+		font-size: 11px;
 		margin-top: 10px;
+	}
+
+	h6 a {
+		font-weight: bold;
 	}
