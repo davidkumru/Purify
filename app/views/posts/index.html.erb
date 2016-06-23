@@ -1,6 +1,3 @@
-<% if user_signed_in? %>
-   <%= render "form" %>
-<% end %>
    <div class="article">
    <% @posts.each do |post| %>
      <% unless @dates.include?(post.created_at.strftime("%B %d")) %>
@@ -30,10 +27,13 @@
          <li></li>
          <li></li>
       </ul>
-      <ul>
-         <li>Search</li>
-         <li></li>
-         <li></li>
-      </ul>
+      <div class="search">
+         <ul>
+            <li><%= form_tag(posts_path, :method => "get", id: "search-form") do %></li>
+            <li><%= search_field_tag :search, params[:search], placeholder: "Search Articles", class: "form_field" %></li>
+            <li><%= submit_tag "Search", class: "form_button_search" %></li>
+            <% end %>
+         </ul>
+      </div>
    </div>
 </div>
