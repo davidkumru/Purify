@@ -1,0 +1,15 @@
+<div class="article">
+<h1>Tag: <%= @tag.name %></h1>
+
+<% @posts.each do |post| %>
+  <h1><%=link_to post.title, post %></h1>
+  <p><%= truncate(post.content, length: 400, separator: ' ') %></p>
+
+  <h6>by <%= link_to post.user.handle, user_posts_path( post.user ) %> on <%= post.created_at.strftime("%B %d, %H:%M") %> - <%= post.comments.count %> comments - <%= post.favorites.count %> favorites
+    <% if user_signed_in? %>
+      <% favorited = Favorite.find_by( post: post, user: current_user ) != nil %>
+      <% btn_color = favorited ? "warning" : "default" %>
+      <%= link_to "+", post_favorites_path( post ), method: :post, disabled: !user_signed_in? %>
+    <% end %></h6>
+<% end %>
+</div>
