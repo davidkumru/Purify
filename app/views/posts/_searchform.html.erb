@@ -1,0 +1,6 @@
+<%= form_tag(search_path, method: "get", id: "search-form") do %>
+<ul>
+   <li><%= search_field_tag(:q) %></li>
+   <li><%= submit_tag("Search", class: "form_button_search") %></li>
+</ul>
+<% end %>
