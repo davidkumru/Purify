@@ -28,21 +28,27 @@ class PostsController < ApplicationController
     end
   end
 
-  # def search
-  #   @search_results = []
-  #   @tags = ActsAsTaggableOn::Tag.all
-  #   @search = params[:q].downcase
-  #   @tags.each do |tag|
-  #     if @search.downcase == tag.downcase
-  #       @search_results << tag
-  #     end
-  #   end
-  #   if @search_results != []
-  #     render 'results'
-  #   else
-  #     render 'not_found'
-  #   end
-  # end
+  def search
+    @search_result = false
+    @tags = ActsAsTaggableOn::Tag.all
+    @users = User.all
+    @search = params[:q]
+    @tags.each do |tag|
+      if @search.downcase == tag.name.downcase
+        redirect_to tag_path(tag)
+        @search_result = true
+      end
+    end
+    @users.each do |user|
+      if @search.downcase == user.handle.downcase
+        redirect_to user_posts_path(user)
+        @search_result = true
+      end
+    end
+    if not @search_result
+      render 'notfound'
+    end
+  end
 
   def user
     @user = User.find( params[:user_id] )
