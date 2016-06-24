@@ -1,210 +1,306 @@
-	@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Montserrat+Alternates:400,700);
+/*-------------------------------- CSS Reset --------------------------------*/
 
-	html, body, div, span, applet, object, iframe,
-	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-	a, abbr, acronym, address, big, cite, code,
-	del, dfn, em, img, ins, kbd, q, s, samp,
-	small, strike, strong, sub, sup, tt, var,
-	b, u, i, center,
-	dl, dt, dd, ol, ul, li,
-	fieldset, form, label, legend,
-	table, caption, tbody, tfoot, thead, tr, th, td,
-	article, aside, canvas, details, embed,
-	figure, figcaption, footer, header, hgroup,
-	menu, nav, output, ruby, section, summary,
-	time, mark, audio, video {
-		margin: 0;
-		padding: 0;
-		border: 0;
-		font-size: 100%;
-		font: inherit;
-		vertical-align: baseline;
-	}
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Montserrat+Alternates:400,700);
 
-	body {
-		height: 100%;
-	   font-family: 'Montserrat';
-	}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
-	.container {
-		margin-top: 50px;
-		display: flex;
-	}
+body {
+  height: 100%;
+   font-family: 'Montserrat';
+}
 
-	.navbar {
-		position: fixed;
-		top:0;
-		left: 0;
-		width:100%;
-		background-color: #a2f2ab;
-		height: 45px;
-	}
+a {
+  color:inherit;
+}
 
-	.navbar a {
-		text-decoration:none;
-	}
+p {
+  font-size: 14px;
+  margin-top: 15px;
+}
 
-	.home {
-	   float:left;
-		margin-top:4px;
-		margin-left:10%;
-		font-size:30px;
-		font-weight: bold;
-		letter-spacing: 4px;
+ul li {
+  list-style: none;
+}
 
-	}
+h1 {
+  margin-top:55px;
+  font-size: 18px;
+}
 
-	.signin {
-		font-size:12px;
-		float:right;
-		margin-top:15px;
-		margin-right:10%;
-	}
+h2{
+  margin-top: 10px;
+  font-size: 16px;
+}
 
-	.article {
-		align-items: stretch;
-		width: 64%;
-		padding-top: 50px;
-		margin-left:10%;
-	}
+h3 {
+  font-size:20px;
+  font-weight: bold;
+}
 
-	.comments {
-		padding-top: 40px;
-	}
+h6 {
+  font-size: 11px;
+  margin-top: 10px;
+}
 
-	.comments h6 {
-		margin-bottom: 25px;
-		border-bottom: 1px solid #a2f2ab;
-		padding-bottom: 25px;
-		width: 80%;
-	}
+h6 a {
+  font-weight: bold;
+}
 
-	.article h1, h3, p, h6 {
-		width: 80%;
-	}
+.container {
+  margin-top: 50px;
+  display: flex;
+}
 
-	.article h1 {
-		font-weight: bold;
-	}
+.navbar {
+  position: fixed;
+  top:0;
+  left: 0;
+  width:100%;
+  background-color: #a2f2ab;
+  height: 45px;
+}
 
-	.article li {
-		list-style: none;
-		font-size:20px;
-	}
+.navbar a {
+  text-decoration:none;
+}
 
-	.aside {
-		align-items: stretch;
-		margin-top: 50px;
-		padding-left: 30px;
-		font-size: 12px;
-		width: 18%;
-		float:left;
-		border-left: 2px solid black
-	}
+.home {
+   float:left;
+  margin-top:4px;
+  margin-left:10%;
+  font-size:30px;
+  font-weight: bold;
+  letter-spacing: 4px;
 
-	.aside .search ul li {
-		margin-bottom: 10px;
+}
 
-	}
+.signin {
+  font-size:12px;
+  float:right;
+  margin-top:15px;
+  margin-right:10%;
+}
 
-	.aside ul {
-		margin-bottom: 120px;
-	}
+.comments {
+  padding-top: 10px;
+}
 
-	.form h1{
-		font-size:24px;
-		margin-bottom:30px;
-	}
+.comments h6 p{
+  margin-top: 25px;
+  border-top: 1px solid #a2f2ab;
+  padding-top: 25px;
+  width: 100%;
+}
 
-	.form {
-		line-height: 30px;
-		margin-bottom:20px;
-	}
+.article h1, h3, p {
+  width: 80%;
+}
 
-	.form_field {
-		outline: none;
-		font-size: 16px;
-		border-top-style: none;
-		border-left-style: none;
-		border-right-style: none;
-		border-bottom: 2px solid black;
-		width: 200px;
-		padding-bottom: 5px;
-		cursor: default;
-	}
+.article h6 {
+  width: 80%;
+}
 
-	.form_field_search {
-		outline: none;
-		font-size: 12px;
-		border-top-style: none;
-		border-left-style: none;
-		border-right-style: none;
-		border-bottom: 2px solid black;
-		width: 140px;
-		cursor: default;
-		padding-bottom: 5px;
-	}
+.article {
+  align-items: stretch;
+  width: 64%;
+  padding-top: 50px;
+  margin-left:10%;
+}
+
+.article h1 {
+  font-weight: bold;
+}
+
+.article li {
+  list-style: none;
+  font-size:20px;
+}
+
+.aside {
+  align-items: stretch;
+  margin-top: 50px;
+  padding-left: 30px;
+  font-size: 12px;
+  width: 18%;
+  float:left;
+  border-left: 2px solid black
+}
+
+.aside .search ul li {
+  margin-bottom: 10px;
+
+}
+
+.aside ul {
+  margin-bottom: 40px;
+}
+
+.form {
+  line-height: 30px;
+  margin-bottom:20px;
+}
+
+.form li {
+  font-size: 16px;
+}
+
+.form li:first-child {
+  margin-top: 15px;
+}
+
+.form h1{
+  font-size:24px;
+  margin-bottom:30px;
+}
+
+.form_field {
+  outline: none;
+  font-size: 16px;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom: 2px solid black;
+  width: 200px;
+  padding-bottom: 5px;
+  cursor: default;
+}
+
+.form_field_post {
+  outline: none;
+  font-size: 16px;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom: 2px solid black;
+  width: 400px;
+  padding-bottom: 5px;
+  cursor: default;
+  margin-bottom: 20px;
+}
+
+.form_box {
+  outline: none;
+  font-size: 16px;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border: 2px solid black;
+  width: 200px;
+  padding-bottom: 5px;
+  cursor: default;
+}
+
+.form_box_post {
+  outline: none;
+  font-size: 16px;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border: 2px solid black;
+  width: 500px;
+  padding-bottom: 5px;
+  cursor: default;
+}
+
+.form_box_comment {
+  outline: none;
+  font-size: 16px;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border: 2px solid black;
+  width: 70%;
+  margin-top: 20px;
+  padding-bottom: 5px;
+  cursor: default;
+}
+
+.form_field_search {
+  outline: none;
+  font-size: 12px;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom: 2px solid black;
+  width: 140px;
+  cursor: default;
+  padding-bottom: 5px;
+}
 
 
-	.form_button {
-		outline: none;
-		font-size: 12px;
-		border: 2px solid black;
-		width: 60px;
-		background-color: inherit;
-		font-weight: bold;
-	}
+.form_button {
+  outline: none;
+  font-size: 12px;
+  border: 2px solid black;
+  width: 60px;
+  background-color: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-	.form_button_search {
-		outline: none;
-		font-size: 10px;
-		border: 2px solid black;
-		width: 50px;
-		background-color: inherit;
-		font-weight: bold;
-	}
+.form_button:hover, .form_button_search:hover, .form_button_comment:hover {
+  border: 2px solid #a2f2ab;
+  cursor: pointer;
+}
 
-	input:-webkit-autofill {
-   	-webkit-box-shadow: 0 0 0px 1000px white inset;
-	}
+.form_button_search {
+  outline: none;
+  font-size: 10px;
+  border: 2px solid black;
+  width: 50px;
+  background-color: inherit;
+  font-weight: bold;
+}
 
-	::-webkit-input-placeholder {
-		color: #a2f2ab;
-	}
+.form_button_comment {
+  outline: none;
+  font-size: 10px;
+  border: 2px solid black;
+  width: 70px;
+  background-color: inherit;
+  font-weight: bold;
+}
 
-	a {
-	   color:inherit;
-	}
+.form_field_comment {
+  outline: none;
+  font-size: 12px;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-bottom: 2px solid black;
+  width: 140px;
+  cursor: default;
+  padding-bottom: 5px;
+}
 
-	p {
-		font-size: 14px;
-		margin-top: 15px;
-	}
+input[type="checkbox"] {
+  /*display:none;*/
+ border: 1px solid black;
+}
 
-	ul li {
-		list-style: none;
-	}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
 
-	h1 {
-		margin-top:55px;
-		font-size: 18px;
-	}
-
-	h2{
-		margin-top: 10px;
-		font-size: 16px;
-	}
-
-	h3 {
-		font-size:20px;
-		font-weight: bold;
-	}
-
-	h6 {
-		font-size: 11px;
-		margin-top: 10px;
-	}
-
-	h6 a {
-		font-weight: bold;
-	}
+::-webkit-input-placeholder {
+  color: #a2f2ab;
+}
