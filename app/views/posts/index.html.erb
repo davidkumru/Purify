@@ -1,8 +1,8 @@
    <div class="article">
    <% @posts.each do |post| %>
      <% unless @dates.include?(post.created_at.strftime("%B %d")) %>
-       <li><%= post.created_at.strftime("%B %d") %></li>
-       <li><% @dates << post.created_at.strftime("%B %d") %></li>
+       <h2><%= post.created_at.strftime("%B %d") %></h2>
+       <% @dates << post.created_at.strftime("%B %d") %>
      <% end %>
 
      <h1><%=link_to post.title, post %></h1>
