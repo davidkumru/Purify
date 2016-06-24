@@ -8,8 +8,8 @@
            <em>&nbsp;|&nbsp;</em>
            <%= link_to "Sign Up", new_user_registration_path %>
         <% else %>
-           <%= current_user.handle %>
-           <em>|</em>
+           <%= link_to current_user.handle, user_posts_path( current_user ) %>
+           <em>&nbsp;|&nbsp;</em>
            <%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
        <% end %>
    </div>

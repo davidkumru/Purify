@@ -1,6 +1,28 @@
 <div class="article">
-   <h1>New Post</h1>
+   <h2>New Post</h2>
 <% if user_signed_in? %>
   <%= render 'posts/form' %>
 <% end %>
+</div>
+<div class="aside">
+  <% if user_signed_in? %>
+<ul>
+  <li><%= link_to "New Post", new_post_path %></li>
+</ul>
+<% end %>
+   <ul>
+      <li><%= link_to "All Tags", tags_path %></li>
+      <li><% @tags.most_used.each do |tag| %>
+        <h6><%= link_to tag, tag_path(tag) %></h6>
+      <% end %></li>
+    </ul>
+   <ul>
+      <li>Users</li>
+      <li><% @users.each do |user| %>
+        <h6><%= link_to user.handle, user_posts_path( user ) %></h6>
+      <% end %></li>
+   </ul>
+   <div class="search">
+     <%= render 'posts/searchform' %>
+   </div>
 </div>

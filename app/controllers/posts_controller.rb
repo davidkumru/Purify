@@ -7,6 +7,8 @@ class PostsController < ApplicationController
   end
 
   def new
+    @tags = ActsAsTaggableOn::Tag.all
+    @users = User.all
   end
 
   def show
