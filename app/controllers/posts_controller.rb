@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   def index
     @posts = Post.order( created_at: :desc )
     @dates = []
+    @tags = ActsAsTaggableOn::Tag.all
+    @users = User.all
   end
 
   def new
@@ -9,6 +11,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find( params[:id])
+    @tags = ActsAsTaggableOn::Tag.all
+    @users = User.all
   end
 
   def create
@@ -24,12 +28,29 @@ class PostsController < ApplicationController
     end
   end
 
+  # def search
+  #   @search_results = []
+  #   @tags = ActsAsTaggableOn::Tag.all
+  #   @search = params[:q].downcase
+  #   @tags.each do |tag|
+  #     if @search.downcase == tag.downcase
+  #       @search_results << tag
+  #     end
+  #   end
+  #   if @search_results != []
+  #     render 'results'
+  #   else
+  #     render 'not_found'
+  #   end
+  # end
+
   def user
     @user = User.find( params[:user_id] )
 
     @posts = Post.where( user: @user ).order( created_at: :desc )
 
     @favorites = @user.favorites.joins( :post ).order( "posts.created_at DESC" )
+    @tags = ActsAsTaggableOn::Tag.all
+    @users = User.all
   end
-
 end
